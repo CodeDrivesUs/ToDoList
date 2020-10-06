@@ -1,0 +1,17 @@
+﻿@page
+@model ToDoList.Web.Pages.TodoList.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+    <abp-dynamic-form abp-model="@Model.todoList" submit-button="true">
+        <div>
+            <h1 class="text-center text-primary">Create </h1>
+        </div>
+        <div class="input-area">
+            <abp-form-content />
+        </div>
+        <div>
+            Some more content....
+        </div>
+    </abp-dynamic-form>
