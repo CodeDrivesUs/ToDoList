@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Volo.Abp.Domain.Entities.Auditing;
 using Volo.Abp.Application.Dtos;
 
-namespace ToDoList.TodolistDto
+namespace ToDoList.TodoListItemDto
 {
-    public class TodoListDto : AuditedEntityDto<Guid>
+    public class TodoListItemDto : AuditedEntityDto<Guid>
     {
         public string Tittle { get; set; }
-        public Guid UserId { get; set; }
         public string Description { get; set; }
+        public string Status { get; set; }
+        public Guid TodoListId { get; set; }
     }
 }

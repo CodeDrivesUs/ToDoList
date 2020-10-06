@@ -6,11 +6,11 @@ using Volo.Abp.Domain.Entities.Auditing;
 namespace ToDoList.TodoListItem
 {
 
-    public class TodoList : AuditedAggregateRoot<Guid>
+    public class TodoListItem : AuditedAggregateRoot<Guid>
     {
         public string Tittle { get; set; }
         public string Description { get; set; }
-        public int MyProperty { get; set; }
+        public string  Status { get; set; }
         public Guid TodoListId { get; set; }
     }
 }

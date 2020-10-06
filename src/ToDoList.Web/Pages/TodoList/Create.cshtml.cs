@@ -28,6 +28,7 @@ namespace ToDoList.Web.Pages.TodoList
         public async Task<IActionResult> OnPostAsync()
         {
             await _TodoListAppService.CreateAsync(todoList);
+          
             return NoContent();
         }
     }

@@ -21,6 +21,7 @@ namespace ToDoList.EntityFrameworkCore
     public class ToDoListDbContext : AbpDbContext<ToDoListDbContext>
     {
         public DbSet<AppUser> Users { get; set; }
+        public DbSet<TodoListItem.TodoListItem> TodoListItems { get; set; }  
         public DbSet<TodoList.TodoList>  TodoLists { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
