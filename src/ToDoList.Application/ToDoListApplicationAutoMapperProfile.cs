@@ -11,6 +11,8 @@ namespace ToDoList
              * into multiple profile classes for a better organization. */
             CreateMap<TodoList.TodoList, TodolistDto.TodoListDto>();
             CreateMap<TodolistDto.CreateUpdateTodoListDto, TodoList.TodoList>();
+            CreateMap<TodoListItem.TodoListItem, TodoListItemDto.TodoListItemDto>();
+            CreateMap<TodoListItemDto.CreateUpdateTodoListItemDto, TodoListItem.TodoListItem>();
         }
     }
 }

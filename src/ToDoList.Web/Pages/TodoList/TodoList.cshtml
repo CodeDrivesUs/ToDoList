@@ -1,0 +1,74 @@
+﻿@page
+@model ToDoList.Web.Pages.TodoList.TodoListModel
+@{
+    ViewData["Title"] = "TodoList";
+}
+
+@section scripts
+{
+    <abp-script src="/Pages/TodoList/TodoList.js" />
+}
+<div class="jumbotron" style="padding:45px 0px">
+    <h4 class="text-center">To Do List App</h4>
+</div>
+
+<div class="input-group">
+    @*<input type="text" class="form-control" >
+        <div class="input-group-addon hover-cursor" id="addbtn" >
+            <i class="fa fa-plus-circle fa-2x"></i>
+        </div>*@
+    <abp-button id="addbtn"
+                text="Add New Item"
+                icon="plus"
+                button-type="Primary" />
+</div>
+<div style="margin:5px 0px; margin-top:60px;">
+    <ul class="list-group">
+        <li class="list-group-item justify-content-center">
+            <span class="hover-cursor text-success">
+                <i class="fa fa-lg fa-check-circle-o"></i>
+            </span>
+            Preper the wedding
+            <span class="hover-cursor text-danger pull-right" (click)="onDelete()">
+                <i class="fa fa-trash-o fa-lg"></i>
+            </span>
+        </li>
+        <li class="list-group-item justify-content-center">
+            <span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alterCheck()">
+                <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
+            </span>
+            go to the gym
+            <span class="hover-cursor text-danger pull-right" (click)="onDelete()">
+                <i class="fa fa-trash-o fa-lg"></i>
+            </span>
+        </li>
+        <li class="list-group-item justify-content-center">
+            <span class="hover-cursor text-success" (click)="alterCheck()">
+                <i class="fa fa-lg fa-circle-thin"></i>
+            </span>
+            go to the gym
+            <span class="hover-cursor text-danger pull-right" (click)="onDelete()">
+                <i class="fa fa-trash-o fa-lg"></i>
+            </span>
+        </li>
+        <li class="list-group-item justify-content-center">
+            <span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alterCheck()">
+                <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
+            </span>
+            Call Mother
+            <span class="hover-cursor text-danger pull-right" (click)="onDelete()">
+                <i class="fa fa-trash-o fa-lg"></i>
+            </span>
+        </li>
+        <li class="list-group-item">
+            <span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alterCheck()">
+                <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
+            </span>
+            Bake A Cake
+            <span class="hover-cursor text-danger pull-right" (click)="onDelete()">
+                <i class="fa fa-trash-o fa-lg"></i>
+            </span>
+        </li>
+    </ul>
+</div>
+
