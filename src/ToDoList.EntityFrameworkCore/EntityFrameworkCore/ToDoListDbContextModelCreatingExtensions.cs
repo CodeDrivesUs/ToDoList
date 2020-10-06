@@ -17,7 +17,7 @@ namespace ToDoList.EntityFrameworkCore
                 b.ToTable(ToDoListConsts.DbTablePrefix + "TodoList", ToDoListConsts.DbSchema);
                 b.ConfigureByConvention(); //auto configure for the base class props
                 b.Property(x => x.Tittle).IsRequired().HasMaxLength(100);
-                b.HasOne<Users.AppUser>().WithMany().HasForeignKey(x => x.UserId).IsRequired();
+              
             });
             builder.Entity<TodoListItem.TodoListItem>(b =>
             {

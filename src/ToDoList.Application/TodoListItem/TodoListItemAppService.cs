@@ -14,8 +14,8 @@ namespace ToDoList.TodoListItem
             TodoListItemDto.TodoListItemDto, //Used to show books
             Guid, //Primary key of the book entity
             PagedAndSortedResultRequestDto, //Used for paging/sorting
-            TodoListItemDto.TodoListItemDto>, //Used to create/update a book
-            Services.ITodoListItemAppService //implement the IBookAppService
+            TodoListItemDto.TodoListItemDto> //Used to create/update a book
+          //  Services.ITodoListItemAppService //implement the IBookAppService
     {
         public TodoListItemAppService(IRepository<TodoListItem, Guid> repository)
            : base(repository)
@@ -23,14 +23,6 @@ namespace ToDoList.TodoListItem
 
         }
 
-        public Task<TodoListItemDto.TodoListItemDto> CreateAsync(CreateUpdateTodoListItemDto input)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<TodoListItemDto.TodoListItemDto> UpdateAsync(Guid id, CreateUpdateTodoListItemDto input)
-        {
-            throw new NotImplementedException();
-        }
+   
     }
 }

@@ -18,7 +18,10 @@
                     title: 'Description',
                     data: "description"
                 },
-           
+                {
+                    title: 'UseraId',
+                    data: "userId"
+                },
                 {
                     title: 'CreationTime', data: "creationTime",
                     render: function (data) {

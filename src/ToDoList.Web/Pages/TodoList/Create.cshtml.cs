@@ -27,9 +27,10 @@ namespace ToDoList.Web.Pages.TodoList
         }
         public async Task<IActionResult> OnPostAsync()
         {
+            todoList.UserId = (Guid)_CurrentUser.Id;
             await _TodoListAppService.CreateAsync(todoList);
-          
-            return NoContent();
+
+            return RedirectToPage("/TodoList/Index");
         }
     }
 }
