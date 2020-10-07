@@ -29,8 +29,7 @@ namespace ToDoList.Web.Menus
             var l = context.GetLocalizer<ToDoListResource>();
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem(ToDoListMenus.Home, l["Menu:Home"], "~/"));
-            context.Menu.AddItem(  new ApplicationMenuItem(  "BooksStore", l["Menu:BookStore"],   icon: "fa fa-book")
-            .AddItem(new ApplicationMenuItem("BooksStore.Books",l["Menu:Books"],url: "/Books")));
+            
         }
     }
 }

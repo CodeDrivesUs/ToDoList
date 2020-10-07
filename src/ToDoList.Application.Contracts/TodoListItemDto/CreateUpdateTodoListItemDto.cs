@@ -5,7 +5,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace ToDoList.TodoListItemDto
 {
-    public class CreateUpdateTodoListItemDto 
+    public class CreateUpdateTodoListItemDto : AuditedEntityDto<Guid>
     {
         public string Tittle { get; set; }
         public string Description { get; set; }

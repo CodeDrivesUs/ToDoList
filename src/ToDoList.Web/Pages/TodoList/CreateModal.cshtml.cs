@@ -13,18 +13,23 @@ namespace ToDoList.Web.Pages.TodoList
     public class CreateModalModel : ToDoListPageModel
     {
         [BindProperty]
-        public TodoListItemDto.TodoListItemDto todoListItem { get; set; }
-        //private readonly Services.ITodoListItemAppService _todoListItemAppService;
-        //private readonly ICurrentUser _CurrentUser;
+        public TodoListItemDto.CreateUpdateTodoListItemDto todoListItem { get; set; }
+        private readonly Services.ITodoListItemAppService _todoListItemAppService;
+        private readonly ICurrentUser _CurrentUser;
 
-        //public CreateModalModel(Services.ITodoListItemAppService todoListItemAppService, ICurrentUser currentUser)
-        //{
-        //    _todoListItemAppService = todoListItemAppService;
-        //    _CurrentUser = currentUser;
-        //}
+        public CreateModalModel(Services.ITodoListItemAppService todoListItemAppService, ICurrentUser currentUser)
+        {
+            _todoListItemAppService = todoListItemAppService;
+            _CurrentUser = currentUser;
+        }
         public void OnGet()
         {
-
+            todoListItem = new TodoListItemDto.CreateUpdateTodoListItemDto();
+        }
+        public async Task<IActionResult> OnPostAsync()
+        {
+            await _todoListItemAppService.CreateAsync(todoListItem);
+            return NoContent();
         }
     }
 }
