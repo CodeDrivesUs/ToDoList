@@ -8,60 +8,70 @@
 {
     <abp-script src="/Pages/TodoList/TodoList.js" />
 }
-<div class="jumbotron" style="padding:45px 0px">
-    <h4 class="text-center">
-        @if (Model.todoListDto.Tittle != null)
-        {
-        <span>@Model.todoListDto.Tittle</span>
-        }
-    </h4>
-</div>
 
-<div class="input-group">
-    @*<input type="text" class="form-control" >
-        <div class="input-group-addon hover-cursor" id="addbtn" >
-            <i class="fa fa-plus-circle fa-2x"></i>
-        </div>*@
-    @*<abp-button id="addbtn" 
+<abp-card>
+    <abp-card-header class="text-center">
+
+        <h4 class="text-center">
+            @if (Model.todoListDto.Tittle != null)
+            {
+                <span>@Model.todoListDto.Tittle</span>
+            }
+        </h4>
+    </abp-card-header>
+    <abp-card-body>
+        <div style="margin:5px 0px; margin-top:60px;">
+            <ul class="list-group">
+                @*@await Html.PartialAsync("~/Pages/PartialViews/_itemDetails.cshtml", Model.todoListItemDtos)*@
+                @foreach (var i in Model.todoListItemDtos)
+                {
+                    <li class="list-group-item justify-content-center">
+                        <span class="hover-cursor text-success">
+                            <i class="fa fa-lg fa-check-circle-o"></i>
+                        </span>
+                        <span>  @i.Tittle - @i.Description</span>
+                        <span class="hover-cursor text-danger pull-right" (click)="onDelete()">
+                            <i class="fa fa-trash-o fa-lg"></i>
+                        </span>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="input-group">
+            @*<input type="text" class="form-control" >
+                <div class="input-group-addon hover-cursor" id="addbtn" >
+                    <i class="fa fa-plus-circle fa-2x"></i>
+                </div>*@
+            @*<abp-button id="addbtn"
                 text="Add New Item"
                 icon="plus"
                 button-type="Primary" />*@
-    <a class="btn btn-primary" href="/TodoList/CreateModal/?Id=@Model.todoListDto.Id">Add New Item</a>
-    <input type="hidden" id="todoid" value="@Model.todoListDto.Id" />
-</div>
-<div style="margin:5px 0px; margin-top:60px;">
-    <ul class="list-group">
-        @*@await Html.PartialAsync("~/Pages/PartialViews/_itemDetails.cshtml", Model.todoListItemDtos)*@
-        @foreach (var i in Model.todoListItemDtos)
-        {
-            <li class="list-group-item justify-content-center">
-                <span class="hover-cursor text-success">
-                    <i class="fa fa-lg fa-check-circle-o"></i>
+            <a class="btn btn-primary" href="/TodoList/CreateModal/?Id=@Model.todoListDto.Id">Add New Item</a>
+            <input type="hidden" id="todoid" value="@Model.todoListDto.Id" />
+        </div>
+        @*<li class="list-group-item justify-content-center">
+                <span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alterCheck()">
+                    <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
                 </span>
-                <span>  @i.Tittle - @i.Description</span>
+                go to the gym
                 <span class="hover-cursor text-danger pull-right" (click)="onDelete()">
                     <i class="fa fa-trash-o fa-lg"></i>
                 </span>
             </li>
-        }
-    </ul>
-</div>
+            <li class="list-group-item justify-content-center">
+                <span class="hover-cursor text-success" (click)="alterCheck()">
+                    <i class="fa fa-lg fa-circle-thin"></i>
+                </span>
+                go to the gym
+                <span class="hover-cursor text-danger pull-right" (click)="onDelete()">
+                    <i class="fa fa-trash-o fa-lg"></i>
+                </span>
+            </li>*@
+    </abp-card-body>
 
-@*<li class="list-group-item justify-content-center">
-    <span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alterCheck()">
-        <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
-    </span>
-    go to the gym
-    <span class="hover-cursor text-danger pull-right" (click)="onDelete()">
-        <i class="fa fa-trash-o fa-lg"></i>
-    </span>
-</li>
-<li class="list-group-item justify-content-center">
-    <span class="hover-cursor text-success" (click)="alterCheck()">
-        <i class="fa fa-lg fa-circle-thin"></i>
-    </span>
-    go to the gym
-    <span class="hover-cursor text-danger pull-right" (click)="onDelete()">
-        <i class="fa fa-trash-o fa-lg"></i>
-    </span>
-</li>*@
+</abp-card>
+<div class="text-center">
+    <footer>
+        <p> @DateTime.Now.Year - ToDo List Application</p>
+    </footer>
+</div>

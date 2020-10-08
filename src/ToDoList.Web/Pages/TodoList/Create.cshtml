@@ -5,20 +5,28 @@
 }
 <abp-card>
     <abp-card-header class="text-center">
-        <h2>Create</h2>
+        <h2>Create New List</h2>
     </abp-card-header>
     <abp-card-body>
 
-        <div class="input-area">
-            <div>
-                <div class="form-group">
-                    <label for="todoList_Tittle">Tittle</label><span class="text-danger"> * </span><input type="text" data-val="true" data-val-length="The field Tittle must be a string with a maximum length of 100." data-val-length-max="100" data-val-required="The Tittle field is required." id="todoList_Tittle" maxlength="100" name="todoList.Tittle" value="" class="form-control " /><span class="text-danger field-validation-valid" data-valmsg-for="todoList.Tittle" data-valmsg-replace="true"></span>
-                </div>
-                <div class="form-group">
-                    <label for="todoList_Description">Description</label><span class="text-danger"> * </span><input type="text" data-val="true" data-val-required="The Description field is required." id="todoList_Description" name="todoList.Description" value="" class="form-control " /><span class="text-danger field-validation-valid" data-valmsg-for="todoList.Description" data-valmsg-replace="true"></span>
+        <form method="post">
+            <div class="input-area">
+                <div>
+                    <div class="form-group">
+                        <label for="todoList_Tittle">List Name</label><span class="text-danger"> * </span><input type="text" data-val="true" data-val-length="The field Tittle must be a string with a maximum length of 100." data-val-length-max="100" data-val-required="The Tittle field is required." id="todoList_Tittle" maxlength="100" name="todoList.Tittle" value="" class="form-control " /><span class="text-danger field-validation-valid" data-valmsg-for="todoList.Tittle" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="todoList_Description">List Description</label><span class="text-danger"> * </span><input type="text" data-val="true" data-val-required="The Description field is required." id="todoList_Description" name="todoList.Description" value="" class="form-control " /><span class="text-danger field-validation-valid" data-valmsg-for="todoList.Description" data-valmsg-replace="true"></span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <button type="submit" class="btn btn-primary" data-busy-text="Processing..."><span>Submit</span></button>
+            <button type="submit" class="btn btn-primary" data-busy-text="Processing..."><span>Submit</span></button>
+        </form>
     </abp-card-body>
+
 </abp-card>
+<div class="text-center">
+    <footer>
+        <p> @DateTime.Now.Year - ToDo List Application</p>
+    </footer>
+</div>

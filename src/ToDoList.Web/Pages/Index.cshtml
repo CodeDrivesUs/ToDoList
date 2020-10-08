@@ -15,17 +15,25 @@
         <abp-script src="/Pages/Index.js" />
     </abp-script-bundle>
 }
-<div class="jumbotron text-center">
-    <h1>@L["Welcome"]</h1>
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <p>@L["LongWelcomeMessage"]</p>
-            <hr class="my-4"/>
+
+    <div class="jumbotron text-center">
+        <h1>@L["Welcome"]</h1>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <p>@L["LongWelcomeMessage"]</p>
+                <hr class="my-4" />
+            </div>
         </div>
+        <div>Brief application description</div>
+        <div>This application allows a user to create different lists of things they need/want to do.</div>
+        <div>In each list a user will also be able to add details about the list.</div>
+        @if (!CurrentUser.IsAuthenticated)
+        {
+            <a abp-button="Primary" href="~/Account/Login" class="px-4"><i class="fa fa-sign-in"></i> @L["Login"]</a>
+        }
     </div>
-    <a href="https://abp.io?ref=tmpl" target="_blank" class="btn btn-primary px-4">abp.io</a>
-    @if (!CurrentUser.IsAuthenticated)
-    {
-        <a abp-button="Primary" href="~/Account/Login" class="px-4"><i class="fa fa-sign-in"></i> @L["Login"]</a>
-    }
-</div>
+    <div class="text-center">
+        <footer>
+            <p> @DateTime.Now.Year - ToDo List Application</p>
+        </footer>
+    </div>

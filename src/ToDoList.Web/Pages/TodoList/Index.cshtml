@@ -8,15 +8,16 @@
 {
     <abp-script src="/Pages/TodoList/Index.js" />
 }
+
 <abp-card>
-    <abp-card-header>
-        <h2>List Of All Your ToDo List</h2>
+    <abp-card-header class="text-center">
+        <h2>List Of All Your ToDo Lists</h2>
     </abp-card-header>
     <abp-card-body>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="Column">Tittle</th>
+                    <th scope="Column">List Name</th>
                     <th scope="Column">Creation Date</th>
                     <th scope="Column">Action</th>
                 </tr>
@@ -34,4 +35,8 @@
         </table>
     </abp-card-body>
 </abp-card>
-
+<div class="text-center">
+    <footer>
+        <p> @DateTime.Now.Year - ToDo List Application</p>
+    </footer>
+</div>

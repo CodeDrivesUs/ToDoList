@@ -3,7 +3,7 @@
   "texts": {
     "Menu:Home": "Home",
     "Welcome": "Welcome",
-    "LongWelcomeMessage": "Welcome to the application.",
+    "LongWelcomeMessage": "Welcome to the application. This is Group 1's ToDo List application",
     "Menu:ToDoList": "ToDo List",
     "Menu:toDoList": "ToDo List"
   }
