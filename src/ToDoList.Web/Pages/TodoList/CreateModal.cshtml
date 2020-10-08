@@ -3,9 +3,12 @@
 @{
     ViewData["Title"] = "CreateModal";
 }
-
-    <form method="post">
-        <input type="hidden" name="todoListItem.TodoListId"/>
+<abp-card>
+    <abp-card-header class="text-center">
+        <h2>Add Details</h2>
+    </abp-card-header>
+    <abp-card-body>
+        <input type="hidden" name="todoListItem.TodoListId" />
         <div class="input-area">
             <div>
                 <div class="form-group">
@@ -19,4 +22,5 @@
         <div class="form">
             <input type="submit" class="btn btn-primary" value="Submit" />
         </div>
-    </form>
+    </abp-card-body>
+</abp-card>
