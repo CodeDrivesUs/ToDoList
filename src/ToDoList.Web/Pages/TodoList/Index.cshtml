@@ -13,7 +13,25 @@
         <h2>List Of All Your ToDo List</h2>
     </abp-card-header>
     <abp-card-body>
-        <abp-table striped-rows="true" id="TodoListTable"></abp-table>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="Column">Tittle</th>
+                    <th scope="Column">Creation Date</th>
+                    <th scope="Column">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.todoList)
+                {
+                <tr>               
+                    <td>@item.Tittle</td>
+                    <td>@item.CreationTime.ToLongDateString()</td>
+                    <td><a href="/Todolist/TodoList/?Id=@item.Id" class="btn btn-info"><span>View Details</span> <i class="fa fa-eye"></i></a> </td>
+                </tr>
+                }
+            </tbody>
+        </table>
     </abp-card-body>
 </abp-card>
 

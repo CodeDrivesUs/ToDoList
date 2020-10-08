@@ -13,5 +13,6 @@ namespace ToDoList.Services
             PagedAndSortedResultRequestDto, //Used for paging/sorting
             TodoListItemDto.CreateUpdateTodoListItemDto> //Used to create/update a book
     {
+        List<TodoListItemDto.TodoListItemDto> GetListByListId(Guid tolistId);
     }
 }

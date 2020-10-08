@@ -6,7 +6,8 @@
     });
 
     $('#addbtn').click(function (e) {
+        var id = $('#todoid').val();
         e.preventDefault();
-        createModal.open();
+        createModal.open({ Id: id });
     });
 });

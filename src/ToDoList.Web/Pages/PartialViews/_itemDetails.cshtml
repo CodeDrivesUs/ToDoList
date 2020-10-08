@@ -1,0 +1,15 @@
+﻿@page
+@model ToDoList.Web.Pages.PartialViews._itemDetailsModel
+
+@foreach (var i in Model.todoListItemDtos)
+{
+    <li class="list-group-item justify-content-center">
+        <span class="hover-cursor text-success">
+            <i class="fa fa-lg fa-check-circle-o"></i>
+        </span>
+        @i.Tittle
+        <span class="hover-cursor text-danger pull-right" (click)="onDelete()">
+            <i class="fa fa-trash-o fa-lg"></i>
+        </span>
+    </li>
+}

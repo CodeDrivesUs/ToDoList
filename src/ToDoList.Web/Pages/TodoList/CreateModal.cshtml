@@ -3,18 +3,20 @@
 @{
     ViewData["Title"] = "CreateModal";
 }
-@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
-@{
-    Layout = null;
-}
 
-<abp-dynamic-form abp-model="@Model.todoListItem" asp-page="/TodoList/CreateModal">
-    <abp-modal>
-        <abp-modal-header title="Add New Item To List"></abp-modal-header>
-        <abp-modal-body>
-            <abp-form-content />
-        </abp-modal-body>
-        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
-    </abp-modal>
-</abp-dynamic-form>
-
+    <form method="post">
+        <input type="hidden" name="todoListItem.TodoListId"/>
+        <div class="input-area">
+            <div>
+                <div class="form-group">
+                    <label for="todoListItem_Tittle">Tittle</label><input type="text" id="todoListItem_Tittle" name="todoListItem.Tittle" value="" class="form-control " /><span class="text-danger field-validation-valid" data-valmsg-for="todoListItem.Tittle" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <label for="todoListItem_Description">Description</label><input type="text" id="todoListItem_Description" name="todoListItem.Description" value="" class="form-control " /><span class="text-danger field-validation-valid" data-valmsg-for="todoListItem.Description" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form">
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </div>
+    </form>

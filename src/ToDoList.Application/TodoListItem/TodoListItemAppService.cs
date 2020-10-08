@@ -7,6 +7,7 @@ using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Linq;
+using System.Linq;
 
 namespace ToDoList.TodoListItem
 {
@@ -24,11 +25,11 @@ namespace ToDoList.TodoListItem
         {
             _listItemsRepository = repository;
         }
-        public List<TodoListItemDto.TodoListItemDto> GetListByListId(Guid tolisId)
-        {
-            var capture = new List<TodoListItemDto.TodoListItemDto>();
-            var query = _listItemsRepository.WhereIf(tolisId != null, x => x.TodoListId == tolisId);
-            return capture;
+        public List<TodoListItemDto.TodoListItemDto> GetListByListId(Guid tolistId)
+        {     
+            return _listItemsRepository.Where(x=>x.TodoListId==tolistId).Select(x=> new TodoListItemDto.TodoListItemDto {
+             LastModifierId=x.LastModifierId, TodoListId=x.TodoListId , CreationTime=x.CreationTime , CreatorId=x.CreatorId , Description=x.Description , Id=x.Id 
+            }).ToList();
         }
    
     }
